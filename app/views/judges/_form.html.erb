@@ -1,0 +1,42 @@
+<%= form_for(@judge) do |f| %>
+  <% if @judge.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@judge.errors.count, "error") %> prohibited this sentiment from being saved:</h2>
+
+      <ul>
+      <% @judge.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="modal-body">
+      <form role="form">
+    <div class="form-group">
+      <%= f.label :Ideology %><br>
+      <% if @ideology.blank? %>
+          <%= f.text_area :ideology, class: 'form-control'%>
+      <% else %>
+          <%= f.text_area :ideology, class: 'form-control', :value => ideology.quote %>
+      <% end %>
+    </div>
+        <div class="form-group">
+          <%= f.label :Sentiment, class: 'text-center' %>
+          </br>
+          <%= f.text_field :sentiment, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :User, class: 'text-center' %>
+          </br>
+          <%= f.text_field :user, class: 'form-control' %>
+        </div>
+
+  <div class="actions">
+    <%= f.submit 'Submit', :class => 'btn btn-block btn-default btn-success'%>
+  </div>
+
+        </form>
+      </div>
+<% end %>

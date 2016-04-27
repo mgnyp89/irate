@@ -1,0 +1,27 @@
+
+<div class="modal-dialog">
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+<h2 class="margin-base-vertical text-center" id="notice"><%= notice %></h2>
+</div>
+<p class='text-center'>
+  <strong >Name:</strong>
+  <%= @ideology.name %>
+</p>
+
+<p class='text-center'>
+  <strong>Association level:</strong>
+  <%= @ideology.association_level %>
+</p>
+
+<p class='text-center'>
+  <strong>Quote:</strong>
+  <%= @ideology.quote %>
+</p>
+    <p class='text-center'>
+<%= link_to 'Edit', edit_ideology_path(@ideology), class: 'btn btn-default btn-xs' %>
+<%= link_to 'ShowAll', ideologies_path, class: 'btn btn-default btn-xs' %>
+    </p>
+</div>
+  </div>

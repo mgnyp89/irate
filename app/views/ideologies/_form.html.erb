@@ -1,0 +1,40 @@
+<%= form_for(@ideology) do |f| %>
+  <% if @ideology.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ideology.errors.count, "error") %> prohibited this quote from being saved:</h2>
+
+      <ul>
+      <% @ideology.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="modal-body">
+      <form role="form">
+  <div class="form-group">
+    <%= f.label :name, class: 'text-center' %>
+    </br>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+    <div class="form-group">
+      <%= f.label :quote %><br>
+      <% if @quote.blank? %>
+          <%= f.text_area :quote, class: 'form-control'%>
+      <% else %>
+          <%= f.text_area :quote, class: 'form-control', :value => quote.content %>
+      <% end %>
+    </div>
+
+  <div class="form-group">
+    <%= f.label :association %><br>
+    <%= f.text_field :association_level, class: 'form-control' %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Submit', :class => 'btn btn-block btn-default btn-success'%>
+  </div>
+
+        </form>
+      </div>
+<% end %>

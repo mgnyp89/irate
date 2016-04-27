@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ideology: MyString
+  sentiment: MyString
+  user: MyString
+
+two:
+  ideology: MyString
+  sentiment: MyString
+  user: MyString

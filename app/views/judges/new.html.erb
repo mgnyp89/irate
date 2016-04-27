@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 panel panel-default">
+      <p id="notice"><%= notice %></p>
+
+      <h1 class="margin-base-vertical text-center">Random Ideology</h1>
+
+      <table class="table table-striped table-condensed table-hover">
+
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Association Level</th>
+          <th>Sample Quote</th>
+          <th colspan="3"></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <td><%= @ideology.name %></td>
+        <td><%= @ideology.association_level %></td>
+        <td><%= @ideology.quote %></td>
+        </tbody>
+      </table>
+
+
+<%= render 'form', :ideology => @ideology %>
+
+      </div>
+    </div>
+</div>
