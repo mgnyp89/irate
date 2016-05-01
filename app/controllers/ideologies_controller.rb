@@ -38,9 +38,8 @@ class IdeologiesController < ApplicationController
       end
     end
 
-    sql = "Update users set score=score+10 where id='1'"
+    sql = "Update users set score=score+10 where id='#{session[:user_id]}'"
     ActiveRecord::Base.connection.execute(sql)
-
   end
 
   # PATCH/PUT /ideologies/1
@@ -75,6 +74,6 @@ class IdeologiesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def ideology_params
-    params.require(:ideology).permit(:name, :association_level, :quote)
+    params.require(:ideology).permit(:name, :association_level, :quote, :rated_by)
   end
 end

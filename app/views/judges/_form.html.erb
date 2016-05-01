@@ -27,12 +27,7 @@
           <%= f.text_field :sentiment, class: 'form-control' %>
         </div>
 
-        <div class="form-group">
-          <%= f.label :User, class: 'text-center' %>
-          </br>
-          <%= f.text_field :user, class: 'form-control' %>
-        </div>
-
+        <%= f.hidden_field :user, :value => session[:user_id] %>
   <div class="actions">
     <%= f.submit 'Submit', :class => 'btn btn-block btn-default btn-success'%>
   </div>

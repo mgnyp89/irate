@@ -5,14 +5,24 @@
         <span class="navbar-brand" href="#">iRate</span>
       </div>
       <ul class="nav navbar-nav">
+        <%logged_in? %>
         <li class="<%= 'active' if params[:controller] == 'welcome' %>"><a href="/welcome/index">Home</a></li>
         <li class="<%= 'active' if params[:controller] == 'faq' %>"><a href="/faq">FAQ</a></li>
         <li class="<%= 'active' if params[:controller] == 'ideologies' %>"><a href="/play">Let's play</a></li>
+        <% if logged_in? %>
         <li class="<%= 'active' if params[:controller] == 'judges' %>"><a href="/judge">Let's judge</a></li>
+        <% end %>
         <li class="<%= 'active' if params[:controller] == 'users' %>"><a href="/leaderboard">Leaderboard</a></li>
+        <% if logged_in? %>
         <li class="<%= 'active' if params[:controller] == 'user_profile' %>"><a href="/my_profile">My Profile</a></li>
-        <li class="navbar-right" class="<%= 'active' if params[:controller] == 'welcome_page_controller' %>"><button type="button" class="btn btn-default" id="login_btn">Login</button></li>
-      </ul>
+        <% end %>
+        <% if logged_in? %>
+            <li class="navbar-right"> <%= link_to 'Log out', log_out, method: :delete %></li>
+            <li class="navbar-right"><a>Welcome !</a></li>
+        <% else %>
+             <li class="navbar-right" class="<%= 'active' if params[:controller] == 'welcome_page_controller' %>"><a href="/login"><button type="button" class="btn btn-default" id="login_btn">Login</button></a></li>
+        <% end %>
+         </ul>
     </div>
   </nav>
 </div>

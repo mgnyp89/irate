@@ -20,11 +20,11 @@
 
         <tbody>
         <tr>
-          <td><%= @users.first.name %></td>
-          <td><%= @users.first.sex %></td>
-          <td><%= @users.first.dob %></td>
-          <td><%= @users.first.location %></td>
-          <td><%= @users.first.score %></td>
+          <td><%= @user.name %></td>
+          <td><%= @user.sex %></td>
+          <td><%= @user.dob %></td>
+          <td><%= @user.location %></td>
+          <td><%= @user.score %></td>
         </tr>
         </tbody>
       </table>
@@ -42,12 +42,11 @@
         </thead>
 
         <tbody>
-        <% @ideologies.each do |ideology| %>
+        <% @judges.each do |judge| %>
             <tr>
-              <td><%= ideology.name %></td>
-              <td><%= ideology.association_level %></td>
-              <td><%= ideology.quote %></td>
-              <td><%= link_to 'Edit', edit_ideology_path(ideology) %></td>
+              <td><%= judge.ideology %></td>
+              <td><%= judge.sentiment %></td>
+              <td><%= link_to 'Edit', edit_judge_path(judge) %></td>
             </tr>
         <% end %>
         </tbody>

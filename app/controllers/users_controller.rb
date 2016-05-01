@@ -2,13 +2,6 @@ class UsersController < ApplicationController
 
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  def login
-
-  end
-
-  def signup
-
-  end
   # GET /users
   # GET /users.json
   def index
@@ -19,10 +12,11 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  # GET /users/1
-  # GET /users/1.json
-  def show
-  end
+  # # GET /users/1
+  # # GET /users/1.json
+  # def show
+  #   @user = User.find(params[:id])
+  # end
 
   # GET /users/new
   def new
@@ -76,11 +70,12 @@ class UsersController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_user
-    @user = user.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   # Should validate params
   def user_params
+    params.require(:user).permit(:name, :username, :dob, :location, :sex, :email, :password, :score)
   end
   
 end

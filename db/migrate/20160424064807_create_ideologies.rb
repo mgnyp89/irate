@@ -4,7 +4,6 @@ class CreateIdeologies < ActiveRecord::Migration
       t.string :name
       t.string :quote
       t.string :association_level
-      t.string :rated_by
 
       t.timestamps null: false
     end

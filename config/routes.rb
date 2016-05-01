@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'users2/new'
+
+  get 'sessions/new'
+
   resources :quotes
   get 'welcome/index'
 
@@ -14,11 +18,17 @@ Rails.application.routes.draw do
   # stores ideologies describing the citations
   resources :ideologies
 
+  resources :sessions
+
   get '/faq' => 'faq#faq'
   get '/play' => 'ideologies#new'
+  get '/signup' => 'users#new'
   get '/judge' => 'judges#new'
   get '/leaderboard' => 'users#leaderboard'
   get '/my_profile' => 'user_profile#index'
+  get '/login'   => 'sessions#new'
+  post '/login'   => 'sessions#create'
+  delete '/logout'  => 'sessions#destroy'
 
   root 'welcome#index'
 

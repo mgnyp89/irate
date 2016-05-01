@@ -38,9 +38,11 @@ Quote.create!(:content => 'War is peace. Freedom is slavery. Ignorance is streng
 
 
 
-User.create!(:username => 'mon', :email => 'myemail.com', :password => 'test', :name => 'Monika', :sex => 'Female', :dob => '02/08/1989', :location => 'Dublin', :score => 0)
+User.create!(:username => 'mon', :email => 'myemail@com', :password => 'test', :name => 'Monika', :sex => 'Female', :dob => '02/08/1989', :location => 'Dublin', :score => 0)
 User.create!(:username => 'alex', :email => 'myemail.com', :password => 'test', :name => 'Alex', :sex => 'Male', :dob => '02/08/1989', :location => 'Dublin', :score => 100)
 User.create!(:username => 'dan', :email => 'myemail.com', :password => 'test', :name => 'Dan', :sex => 'Male', :dob => '02/08/1989', :location => 'Dublin', :score => 300)
 User.create!(:username => 'joe', :email => 'myemail.com', :password => 'test', :name => 'Joe', :sex => 'Male', :dob => '02/08/1989', :location => 'Dublin', :score => 5560)
 
-Ideology.create!(:name => 'Capitalism', :association_level => 'Positive', :quote => 'Capitalism is a necessity for freedom', :rated_by => 'mon')
+Ideology.create!(:name => 'Capitalism', :association_level => 'Positive', :quote => 'Capitalism is a necessity for freedom', :rated_by => '9')
+Ideology.create!(:name => 'Capitalism', :association_level => 'Positive', :quote => 'Capitalism is a necessity for freedom', :rated_by => '9')
+Ideology.create!(:name => 'Capitalism', :association_level => 'Positive', :quote => 'Capitalism is a necessity for freedom', :rated_by => '9')

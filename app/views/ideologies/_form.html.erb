@@ -1,7 +1,7 @@
 <%= form_for(@ideology) do |f| %>
   <% if @ideology.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@ideology.errors.count, "error") %> prohibited this quote from being saved:</h2>
+      <h2><%= pluralize(@ideology.errors.count, "error") %> prohibited this ideology from being saved:</h2>
 
       <ul>
       <% @ideology.errors.full_messages.each do |message| %>
@@ -31,6 +31,8 @@
     <%= f.label :association %><br>
     <%= f.text_field :association_level, class: 'form-control' %>
   </div>
+    <%= f.hidden_field :rated_by, :value => session[:user_id] %>
+
   <div class="actions">
     <%= f.submit 'Submit', :class => 'btn btn-block btn-default btn-success'%>
   </div>

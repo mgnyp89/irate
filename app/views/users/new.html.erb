@@ -1,0 +1,66 @@
+<%= form_for(@user) do |f| %>
+    <!-- Modal -->
+    <div class="modal fade" id="signup_page" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title text-center">Sign up for iRate <small>It's free!</small></h3>
+              </div>
+            </div>
+            <div class="modal-body">
+              <form role="form">
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <%= f.text_field :username, class: 'form-control input-sm', placeholder: 'User Name'%>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <%= f.text_field :name, class: 'form-control input-sm', placeholder: 'First + Last Name'%>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <%= f.text_field :sex, class: 'form-control input-sm', placeholder: 'Sex'%>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <%= f.text_field :location, class: 'form-control input-sm', placeholder: 'Location'%>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <%= f.text_field :dob, class: 'form-control input-sm dob', placeholder: 'Date of birth'%>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <%= f.text_field :email, class: 'form-control input-sm', placeholder: 'Email Address'%>
+                      </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <%= f.text_field :password, class: 'form-control input-sm', placeholder: 'Password'%>
+                      </div>
+                  </div>
+                </div>
+                <%= f.hidden_field :score, :value => 0 %>
+                <%= f.submit 'Register', class: 'btn btn-info btn-block' %></br>
+                <button type="submit" class="btn btn-info btn-block" data-dismiss="modal">Cancel</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
