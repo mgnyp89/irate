@@ -3,6 +3,8 @@ gwap project
 
 iRate is a ruby on rails app.
 
+Link to screencast: https://www.dropbox.com/s/yhukymca10cvrep/Screencast.webm?dl=0
+
 iRate makes an attempt to address the problem of accurately labeling textual data with the corresponding ideas
 and representing how strongly such ideas are conveyed. It provides a forum for sentiment analysis of intellectual content,
 which in turn can be used to build models of philosophical and political stances by geographic location.
