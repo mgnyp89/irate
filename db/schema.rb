@@ -51,9 +51,8 @@ ActiveRecord::Schema.define(version: 201604640605127) do
     t.string   "dob"
     t.string   "location"
     t.integer  "score"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

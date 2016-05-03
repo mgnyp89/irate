@@ -10,6 +10,4 @@ class User < ActiveRecord::Base
   validates_presence_of :location
   validates_numericality_of :score
 
-  has_secure_password
-
 end
