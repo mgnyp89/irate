@@ -17,10 +17,10 @@
         <li class="<%= 'active' if params[:controller] == 'user_profile' %>"><a href="/my_profile">My Profile</a></li>
         <% end %>
         <% if logged_in? %>
-            <li class="navbar-right"> <%= link_to 'Log out', log_out, method: :delete %></li>
-            <li class="navbar-right"><a>Welcome !</a></li>
+            <li class="navbar-right"> <%= link_to "Log out", logout_path, method: "delete"  %></li>
+            <li class="navbar-right"><a>Welcome <%= current_user.name %>!</a></li>
         <% else %>
-             <li class="navbar-right" class="<%= 'active' if params[:controller] == 'welcome_page_controller' %>"><a href="/login"><button type="button" class="btn btn-default" id="login_btn">Login</button></a></li>
+             <li class="navbar-right" class="<%= 'active' if params[:controller] == 'welcome_page_controller' %>"><button type="button" onclick="window.location = '/login'" class="btn btn-default" id="login_btn">Login</button></li>
         <% end %>
          </ul>
     </div>

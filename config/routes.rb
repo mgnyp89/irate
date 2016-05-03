@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   # stores ideologies describing the citations
   resources :ideologies
 
-  resources :sessions
 
   get '/faq' => 'faq#faq'
   get '/play' => 'ideologies#new'
@@ -28,7 +27,7 @@ Rails.application.routes.draw do
   get '/my_profile' => 'user_profile#index'
   get '/login'   => 'sessions#new'
   post '/login'   => 'sessions#create'
-  delete '/logout'  => 'sessions#destroy'
+  get 'logout'  => 'sessions#destroy'
 
   root 'welcome#index'
 

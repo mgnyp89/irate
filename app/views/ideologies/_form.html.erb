@@ -31,8 +31,11 @@
     <%= f.label :association %><br>
     <%= f.text_field :association_level, class: 'form-control' %>
   </div>
-    <%= f.hidden_field :rated_by, :value => session[:user_id] %>
-
+        <% if @quote.blank? %>
+          <%= f.hidden_field :rated_by, :value => session[:user_id] %>
+        <% else %>
+            <%= f.hidden_field :rated_by, :value => '0' %>
+        <% end %>
   <div class="actions">
     <%= f.submit 'Submit', :class => 'btn btn-block btn-default btn-success'%>
   </div>
